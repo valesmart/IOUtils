@@ -4,38 +4,36 @@ import java.io.Reader;
 import java.io.Writer;
 
 /**
- * Утилиты для работы с потоками ввода-вывода. 
- * 
- * @author nedis
- * @version 1.0
+ * РЈС‚РёР»РёС‚С‹ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ РїРѕС‚РѕРєР°РјРё РІРІРѕРґР°-РІС‹РІРѕРґР°. 
  */
+
 public interface IOUtils {
 	
 	/**
-     * Копирование стороки из входного потока в выходной, попутно заменяя
-     символы из которые есть в <code>inChars</code>, на символы которые
-     находятся в той же позиции в <code>outChars</code>. Строки
-     <code>inChars</code> и <code>outChars</code> должны быть одинаковой
-     длинны. Если <code>inChars</code> или <code>outChars</code> == null
-     считаем что на вход была подана пустая строка. <b> Пример: in =
+     * РљРѕРїРёСЂРѕРІР°РЅРёРµ СЃС‚РѕСЂРѕРєРё РёР· РІС…РѕРґРЅРѕРіРѕ РїРѕС‚РѕРєР° РІ РІС‹С…РѕРґРЅРѕР№, РїРѕРїСѓС‚РЅРѕ Р·Р°РјРµРЅСЏСЏ
+     СЃРёРјРІРѕР»С‹ РёР· РєРѕС‚РѕСЂС‹Рµ РµСЃС‚СЊ РІ <code>inChars</code>, РЅР° СЃРёРјРІРѕР»С‹ РєРѕС‚РѕСЂС‹Рµ
+     РЅР°С…РѕРґСЏС‚СЃСЏ РІ С‚РѕР№ Р¶Рµ РїРѕР·РёС†РёРё РІ <code>outChars</code>. РЎС‚СЂРѕРєРё
+     <code>inChars</code> Рё <code>outChars</code> РґРѕР»Р¶РЅС‹ Р±С‹С‚СЊ РѕРґРёРЅР°РєРѕРІРѕР№
+     РґР»РёРЅРЅС‹. Р•СЃР»Рё <code>inChars</code> РёР»Рё <code>outChars</code> == null
+     СЃС‡РёС‚Р°РµРј С‡С‚Рѕ РЅР° РІС…РѕРґ Р±С‹Р»Р° РїРѕРґР°РЅР° РїСѓСЃС‚Р°СЏ СЃС‚СЂРѕРєР°. <b> РџСЂРёРјРµСЂ: in =
      1234567890<b> inChars = 357<b> outChars = 480<b> <b> out = 1244860890<b>
      *
      * @param in
      * @param out
      * @param inChars
      * @param outChars
-     * @throws NullPointerException если любой из параметров in или out == null 
-     * @throws IllegalArgumentException если inChars.length != outChars.length
+     * @throws NullPointerException РµСЃР»Рё Р»СЋР±РѕР№ РёР· РїР°СЂР°РјРµС‚СЂРѕРІ in РёР»Рё out == null 
+     * @throws IllegalArgumentException РµСЃР»Рё inChars.length != outChars.length
      */
 	void replaceChars(Reader in, Writer out,String inChars,String outChars) throws NullPointerException, IllegalArgumentException;
 	
 	/**
-	 * Функция находит все файлы в директории и поддиректориях и возвращает их полные пути в виде массива строк. 
+	 * Р¤СѓРЅРєС†РёСЏ РЅР°С…РѕРґРёС‚ РІСЃРµ С„Р°Р№Р»С‹ РІ РґРёСЂРµРєС‚РѕСЂРёРё Рё РїРѕРґРґРёСЂРµРєС‚РѕСЂРёСЏС… Рё РІРѕР·РІСЂР°С‰Р°РµС‚ РёС… РїРѕР»РЅС‹Рµ РїСѓС‚Рё РІ РІРёРґРµ РјР°СЃСЃРёРІР° СЃС‚СЂРѕРє. 
 	 * 
-	 * @param dir папка с которой необходимо начать поиск 
-	 * @return массив путей к файлам 
-	 * @throws NullPointerException если dir == null  
-	 * @throws IllegalArgumentException если dir не существует
+	 * @param dir РїР°РїРєР° СЃ РєРѕС‚РѕСЂРѕР№ РЅРµРѕР±С…РѕРґРёРјРѕ РЅР°С‡Р°С‚СЊ РїРѕРёСЃРє 
+	 * @return РјР°СЃСЃРёРІ РїСѓС‚РµР№ Рє С„Р°Р№Р»Р°Рј 
+	 * @throws NullPointerException РµСЃР»Рё dir == null  
+	 * @throws IllegalArgumentException РµСЃР»Рё dir РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚
 	 */
 	String[] findFiles(String dir) throws NullPointerException, IllegalArgumentException;
 }
