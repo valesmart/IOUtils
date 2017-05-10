@@ -12,21 +12,21 @@ import java.io.Writer;
 public interface IOUtils {
 	
 	/**
-	 * Копирование стороки из входного потока в выходной, попутно заменяя
- символы из которые есть в <code>inChars</code>, на символы которые
- находятся в той же позиции в <code>outChars</code>. Строки
- <code>inChars</code> и <code>outChars</code> должны быть одинаковой
- длинны. Если <code>inChars</code> или <code>outChars</code> == null
- считаем что на вход была подана пустая строка. <b> Пример: in =
- 1234567890<b> inChars = 357<b> outChars = 480<b> <b> out = 1244860890<b>
-	 * 
-	 * @param in
-	 * @param out
-	 * @param inChars
-	 * @param outChars
-	 * @throws NullPointerException если любой из параметров in или out == null 
-	 * @throws IllegalArgumentException если inChars.length != outChars.length
-	 */
+     * Копирование стороки из входного потока в выходной, попутно заменяя
+     символы из которые есть в <code>inChars</code>, на символы которые
+     находятся в той же позиции в <code>outChars</code>. Строки
+     <code>inChars</code> и <code>outChars</code> должны быть одинаковой
+     длинны. Если <code>inChars</code> или <code>outChars</code> == null
+     считаем что на вход была подана пустая строка. <b> Пример: in =
+     1234567890<b> inChars = 357<b> outChars = 480<b> <b> out = 1244860890<b>
+     *
+     * @param in
+     * @param out
+     * @param inChars
+     * @param outChars
+     * @throws NullPointerException если любой из параметров in или out == null 
+     * @throws IllegalArgumentException если inChars.length != outChars.length
+     */
 	void replaceChars(Reader in, Writer out,String inChars,String outChars) throws NullPointerException, IllegalArgumentException;
 	
 	/**
